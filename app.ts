@@ -8,11 +8,9 @@ function printResult(num: number) {
   console.log("Result: " + num);
 }
 
-// let combineValues;
-// let combineValues: Function;
-let combineValues: (n1: number, n2: number) => number;
+function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
+  const result = n1 + n2;
+  cb(result);
+}
 
-combineValues = add;
-// combineValues = printResult;
-
-printResult(combineValues(5, 12));
+addAndHandle(3, 5, (x) => console.log(x));
