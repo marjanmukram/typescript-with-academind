@@ -1,23 +1,45 @@
-// Lets allow TS to infer types
-const person2: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
+// Enums
+// const ADMIN = 0;
+// const READ_ONLY = 1;
+// const AUTHOR = 2;
+
+// const person = {
+//   name: "Marjan",
+//   age: 22,
+//   hobbies: ["Sports", "Cooking"],
+//   role: ADMIN,
+// };
+
+// console.log(person.role);
+
+//
+
+// enum Role {
+//   ADMIN,
+//   READ_ONLY,
+//   AUTHOR,
+// }
+
+// const person = {
+//   name: "Marjan",
+//   age: 22,
+//   hobbies: ["Sports", "Cooking"],
+//   role: Role.ADMIN,
+// };
+
+// console.log(person.role);
+
+enum Role {
+  ADMIN = "ADMIN",
+  READ_ONLY = "READ_ONLY",
+  AUTHOR = "AUTHOR",
+}
+
+const person = {
   name: "Marjan",
   age: 22,
   hobbies: ["Sports", "Cooking"],
-  role: [2, "author"],
+  role: Role.READ_ONLY,
 };
 
-person2.role.push("admin");
-// person2.role[1] = 2;
-// person2.role = [0, "adimin", 2];
-
-let favoriteActivities: any[];
-favoriteActivities = ["Sports"];
-
-for (const hobby of person2.hobbies) {
-  console.log(hobby.toUpperCase());
-}
+console.log(person.role);
