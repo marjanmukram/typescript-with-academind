@@ -13,4 +13,7 @@ function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
   cb(result);
 }
 
-addAndHandle(3, 5, (x) => console.log(x));
+addAndHandle(3, 5, (x) => {
+  console.log(x);
+});
+addAndHandle(3, 5, (x) => x);
