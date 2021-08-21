@@ -1,45 +1,28 @@
-// Enums
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
+function combine(
+  input1: number | string,
+  input2: number | string,
+  resultConversion: "as-number" | "as-text"
+) {
+  let result;
+  if (
+    (typeof input1 === "number" && typeof input2 === "number") ||
+    resultConversion === "as-number"
+  ) {
+    result = +input1 + +input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
 
-// const person = {
-//   name: "Marjan",
-//   age: 22,
-//   hobbies: ["Sports", "Cooking"],
-//   role: ADMIN,
-// };
-
-// console.log(person.role);
-
-//
-
-// enum Role {
-//   ADMIN,
-//   READ_ONLY,
-//   AUTHOR,
-// }
-
-// const person = {
-//   name: "Marjan",
-//   age: 22,
-//   hobbies: ["Sports", "Cooking"],
-//   role: Role.ADMIN,
-// };
-
-// console.log(person.role);
-
-enum Role {
-  ADMIN = "ADMIN",
-  READ_ONLY = "READ_ONLY",
-  AUTHOR = "AUTHOR",
+  // if (resultConversion === "as-number") {
+  //   return +result;
+  // }
+  return result;
 }
 
-const person = {
-  name: "Marjan",
-  age: 22,
-  hobbies: ["Sports", "Cooking"],
-  role: Role.READ_ONLY,
-};
+const combinedAges = combine(26, 30, "as-number");
+const combinedNames = combine("Amal", "Nimal", "as-text");
+const combinedStringAges = combine("26", "30", "as-number");
 
-console.log(person.role);
+console.log(combinedAges);
+console.log(combinedNames);
+console.log(combinedStringAges);
