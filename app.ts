@@ -1,9 +1,10 @@
 type Combinable = string | number;
+type ConversionDescriptor = "as-number" | "as-text";
 
 function combine(
   input1: Combinable,
   input2: Combinable,
-  resultConversion: "as-number" | "as-text"
+  resultConversion: ConversionDescriptor
 ) {
   let result;
   if (
