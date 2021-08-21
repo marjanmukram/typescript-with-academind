@@ -9,3 +9,12 @@ userInput = "Max";
 if (typeof userInput === "string") {
   username = userInput;
 }
+
+function generateError(message: string, code: number): never {
+  throw { message, code };
+  // while (true) {}
+}
+//  never returns anything
+
+const result = generateError("An error occured", 500);
+console.log(result);
